@@ -1,0 +1,447 @@
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    height: 90px;
+    transition: all 0.5s;
+    z-index: 997;
+    background: rgba(52, 59, 64, 0.9);
+  }
+  #header #logo h1 {
+    font-size: 32px;
+    margin: 0;
+    line-height: 1;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  #header #logo h1 a, #header #logo h1 a:hover {
+    color: #fff;
+  }
+  #header #logo img {
+    padding: 0;
+    margin: 0;
+  }
+  #header.header-transparent {
+    background: transparent;
+  }
+  #header.header-scrolled {
+    background: rgba(52, 59, 64, 0.9);
+    height: 70px;
+    transition: all 0.5s;
+  }
+  .scrolled-offset {
+    margin-top: 10px;
+  }
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url('https://vistapointe.net/images/hotel-7.jpg') top center;
+    background-size: cover;
+    position: relative;
+  }
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  #hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  #hero .hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  #hero h1 {
+    margin: 30px 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+  #hero h2 {
+    color: #eee;
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+  @media (max-width: 768px) {
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
+  #hero .btn-get-started {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  #hero .btn-get-started:hover {
+    background: #2dc997;
+    border: 2px solid #2dc997;
+  }
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+    overflow: hidden;
+}
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+    padding: 0;
+  }
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  .navbar li {
+    position: relative;
+  }
+  .navbar > ul > li {
+    white-space: nowrap;
+    padding: 10px 0 10px 24px;
+  }
+  .navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    font-size: 14px;
+    padding: 0 4px;
+    white-space: nowrap;
+    transition: 0.3s;
+    letter-spacing: 0.4px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .navbar a i, .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  .navbar > ul > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #2dc997;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  .navbar a:hover:before, .navbar li:hover > a:before, .navbar .active:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: #fff;
+  }
+  .navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 24px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+  }
+  .navbar .dropdown ul li {
+    min-width: 200px;
+  }
+  .navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
+    color: #666666;
+  }
+  .navbar .dropdown ul a i {
+    font-size: 12px;
+  }
+  .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+    color: #2dc997;
+  }
+  .navbar .dropdown:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  .navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+  }
+  @media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+    .navbar .dropdown .dropdown:hover > ul {
+      left: -100%;
+    }
+  }
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Card
+--------------------------------------------------------------*/
+#cards_landscape_wrap-2{
+    text-align: center;
+    background: #F7F7F7;
+  }
+  #cards_landscape_wrap-2 .container{
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  #cards_landscape_wrap-2 a{
+    text-decoration: none;
+    outline: none;
+  }
+  #cards_landscape_wrap-2 .card-flyer {
+    border-radius: 5px;
+  }
+  #cards_landscape_wrap-2 .card-flyer .image-box{
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+    border-radius: 5px;
+  }
+  #cards_landscape_wrap-2 .card-flyer .image-box img{
+    -webkit-transition:all .9s ease;
+    -moz-transition:all .9s ease;
+    -o-transition:all .9s ease;
+    -ms-transition:all .9s ease;
+    width: 100%;
+    height: 200px;
+  }
+  #cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+    opacity: 0.7;
+    -webkit-transform:scale(1.15);
+    -moz-transform:scale(1.15);
+    -ms-transform:scale(1.15);
+    -o-transform:scale(1.15);
+    transform:scale(1.15);
+  }
+  #cards_landscape_wrap-2 .card-flyer .text-box{
+    text-align: center;
+  }
+  #cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+    padding: 30px 18px;
+  }
+  #cards_landscape_wrap-2 .card-flyer{
+    background: #FFFFFF;
+    margin-top: 50px;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+  }
+  #cards_landscape_wrap-2 .card-flyer:hover{
+    background: #fff;
+    box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    margin-top: 50px;
+  }
+  #cards_landscape_wrap-2 .card-flyer .text-box p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #000000;
+  }
+  #cards_landscape_wrap-2 .card-flyer .text-box h6 p{
+    margin-top: 0px;
+    margin-bottom: 4px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #00acc1;
+  }
+/*--------------------------------------------------------------
+# Card
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+#contact {
+    background: #f7f7f7d7;
+    width: 100%;
+    overflow-y: visible;
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 50%;
+    padding: 80px 0 0px 0;
+  }
+  #contact #google-map {
+    height: 500px;
+    margin-bottom: 20px;
+  }
+  #contact .info {
+    color: #333333;
+  }
+  #contact .info i {
+    font-size: 32px;
+    color: #2dc997;
+    float: left;
+    line-height: 0;
+  }
+  #contact .info p {
+    padding: 0 0 10px 50px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    font-size: 14px;
+  }
+  #contact .info .email p {
+    padding-top: 5px;
+  }
+  #contact .social-links {
+    padding: 20px 0;
+  }
+  #contact .social-links a {
+    font-size: 18px;
+    background: #333;
+    color: #fff;
+    line-height: 1;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #contact .social-links a i {
+    line-height: 0;
+  }
+  #contact .social-links a:hover {
+    background: #2dc997;
+    color: #fff;
+  }
+
+  @-webkit-keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Custom CSS
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Freehand&display=swap');
+
+.title_icon {
+    font-family: 'Freehand', cursive;
+}
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+  }
+/*--------------------------------------------------------------
+# Custom CSS
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# CSS Validasi
+--------------------------------------------------------------*/
+form.cmxform label.error, label.error {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: -20px;
+}
+/*--------------------------------------------------------------
+# CSS Validasi
+--------------------------------------------------------------*/
+
+
+
+
+
